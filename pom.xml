@@ -11,8 +11,8 @@
     <groupId>com.cockroachlabs</groupId>
     <artifactId>payroll-spring-data-jpa-example</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>select-star-demo</name>
-    <description>select-star-demo</description>
+    <name>SELECT STAR :: Payroll Example :: Spring Data JPA</name>
+    <description>How to use Spring Data JPA with CockroachDB</description>
     <url/>
     <licenses>
         <license/>
