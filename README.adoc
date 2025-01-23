@@ -1,0 +1,8 @@
+== Payroll -- Spring Data JPA with CockroachDB
+
+Did you know relational apps are preferred over non-relational ones up to 4-to-1?
+And in Javaland, one of the most popular toolkits is JPA!
+
+With this application, see how fast you can get off the ground when you use Spring Data JPA as your tool of choice for your CockroachDB application!
+
+image::https://img.youtube.com/vi/y_MxZE6OCvI/hqdefault.jpg[YouTube Thumbnail, link="https://www.youtube.com/watch?v=y_MxZE6OCvI"]
