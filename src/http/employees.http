@@ -1,0 +1,12 @@
+### Send a POST
+POST http://localhost:8000/api/employees
+Content-Type: application/json
+
+{
+  "name": "Gandalf",
+  "role": "Wizard"
+}
+
+### Send a GET
+GET http://localhost:8000/api/employees
+Content-Type: application/json
