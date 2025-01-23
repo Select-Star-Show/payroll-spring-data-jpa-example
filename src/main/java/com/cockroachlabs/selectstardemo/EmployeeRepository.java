@@ -10,12 +10,13 @@ public interface EmployeeRepository extends JpaRepository<Employee, UUID> {
 
 	List<Employee> findByRole(String role);
 
-	@Query(value = """
-            SELECT *
-            FROM employee
-            WHERE role = :role
-            AS OF SYSTEM TIME '-5s'
-            """, nativeQuery = true)
-	List<Employee> findByRoleWithFollowerRead(String role);
+	List<Employee> findByNameContaining(String partial);
 
+	@Query(value = """
+			SELECT *
+			FROM employee
+			AS OF SYSTEM TIME '-30s'
+			WHERE role = (:role)
+			""", nativeQuery = true)
+	List<Employee> findRecentByRole(String role);
 }

@@ -1,6 +1,7 @@
 package com.cockroachlabs.selectstardemo;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,13 +21,24 @@ public class ApiController {
 		return repository.findAll();
 	}
 
-	@GetMapping("/api/employees/{role}")
+	@GetMapping("/api/employees/{id}")
+	Employee findById(@PathVariable UUID id) {
+		return repository.findById(id) //
+				.orElseThrow(() -> new RuntimeException("Can't find Employee with id '" + id + "'"));
+	}
+
+	@GetMapping("/api/employees/role/{role}")
 	List<Employee> findByRole(@PathVariable String role) {
 		return repository.findByRole(role);
 	}
 
-	@GetMapping("/api/employees/followers/{role}")
-	List<Employee> findByRoleWithfollowReads(@PathVariable String role) {
-		return repository.findByRoleWithFollowerRead(role);
+	@GetMapping("/api/employees/name/{search}")
+	List<Employee> findByName(@PathVariable String search) {
+		return repository.findByNameContaining(search);
+	}
+
+	@GetMapping("/api/employees/recent/role/{role}")
+	List<Employee> findRecentByRole(@PathVariable String role) {
+		return repository.findRecentByRole(role);
 	}
 }
