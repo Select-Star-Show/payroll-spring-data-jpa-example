@@ -47,13 +47,13 @@ public class ApiController {
 		return repository.findRecentByRole(role);
 	}
 
-	@PostMapping( "/api/employees")
+	@PostMapping("/api/employees")
 	Employee create(@RequestBody Employee employee) {
 		return repository.save(employee);
 	}
 
-	@ResponseStatus(code= HttpStatus.NO_CONTENT)
-	@DeleteMapping( "/api/employees/{id}")
+	@ResponseStatus(code = HttpStatus.NO_CONTENT)
+	@DeleteMapping("/api/employees/{id}")
 	void delete(@PathVariable UUID id) {
 		repository.deleteById(id);
 	}
